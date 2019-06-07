@@ -1,14 +1,15 @@
-require "pry"
 def run_guessing_game
   puts "Guess a number between 1 and 6."
   input = gets.chomp
-  while input != "Exit"
+  until input == "Exit"
     number = rand(1..6)
-    binding.pry
     if input.to_i == number
       puts "You guessed the correct number!"
-    else
+    else input.to_i != number
       puts "The computer guessed <#{number}>"
+		
+			puts "Guess a number between 1 and 6."
+  		input = gets.chomp
     end
   end
   puts "Goodbye!"
